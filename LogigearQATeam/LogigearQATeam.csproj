@@ -102,6 +102,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestSuites\ArticleFeature\ArticleFeature.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArticleFeature.feature</DependentUpon>
+    </Compile>
+    <Compile Include="TestSuites\ArticleFeature\TestCase1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -116,11 +122,14 @@
     <None Include="SpecRunTestProfile_2011_09.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="TestSuites\ArticleFeature\ArticleFeature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ArticleFeature.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="PageObject\" />
-    <Folder Include="TestSuites\ArticleFeature\Demo\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
