@@ -120,7 +120,7 @@
   <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="PageObject\" />
-    <Folder Include="TestSuites\ArticleFeature\" />
+    <Folder Include="TestSuites\ArticleFeature\Demo\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
