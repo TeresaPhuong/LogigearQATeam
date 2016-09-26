@@ -78,7 +78,7 @@ namespace LogigearQATeam.TestSuites.ArticleFeature
             AMP.IsSuccessMessageDisplay(messagecontent);
         }
 
-        [Then(@"The new article (.*) displays in Article Manage table")]
+        [Then(@"The new article: (.*) displays in Article Manage table")]
         public bool ThenTheNewArticleDisplaysInArticleManageTable(string checkedtitle)
         {
             return AMP.IsNewArticleDisplay(checkedtitle);
