@@ -17,10 +17,11 @@ namespace LogigearQATeam.Common
             public string value { get; set; }
         }
 
-        public string[] GetControlValue(string nameControl)
+        public string GetControlValue(string nameControl, string pageName)
         {
             string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName;
             path = path.Replace("\\bin\\Debug", "");
+            path = path + "\\" + pageName + "\\" + pageName + ".json";
 
             var result = new JavaScriptSerializer().Deserialize<List<control>>(path);
             string[] control = new string[2];
@@ -30,7 +31,7 @@ namespace LogigearQATeam.Common
                 {
                     control[0] = item.type;
                     control[1] = item.value;
-                    return control;
+                    return control[1];
                 }
             }
             return null;
