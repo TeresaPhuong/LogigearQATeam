@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace LogigearQATeam.Common
 {
-    public class CommonAC
+    public class CommonAC:SystemHandle
     {
         public static IWebDriver driver;
 

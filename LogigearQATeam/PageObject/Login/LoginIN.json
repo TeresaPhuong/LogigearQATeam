@@ -5,8 +5,8 @@
     "value": "//input[@id='mod-login-username']"
   },
   {
-    "controlName": "display name textbox",
-    "type": "Password_tbx",
+    "controlName": "Password_tbx",
+    "type": "xpath",
     "value": ".//input[@id='mod-login-password']"
   },
   {
