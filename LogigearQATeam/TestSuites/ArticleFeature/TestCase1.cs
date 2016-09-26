@@ -3,52 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
+using LogigearQATeam.PageObject;
+using LogigearQATeam.PageObject.Login;
+using LogigearQATeam.PageObject.AddOrEditArticle;
 
 namespace LogigearQATeam.TestSuites.ArticleFeature
 {
     [Binding]
-    public sealed class TestCase1
+    public sealed class TestCase1:Common.CommonAC
     {
+        LoginAC LP = new LoginAC();
+        HomePageAC HP = new HomePageAC();
+        AddNewArticlePage AddP = new AddNewArticlePage();
+
         [Given(@"I naviate to Joomla site: (.*)")]
-        public void GivenINaviateToJoomlaSite(string URL)
+        public void NaviateToJoomlaSite(string URL)
         {
-            ScenarioContext.Current.Pending();
+            NavigateTo(URL);
         }
 
         [Given(@"I enter username: (.*)")]
-        public void GivenIEnterUsernamePhuong_Thi_Tran(string username)
+        public void EnterUsername(string username)
         {
-            ScenarioContext.Current.Pending();
+            LP.EnterIntoUsername(username);
         }
 
         [Given(@"I enter password: (.*)")]
-        public void GivenIEnterPassword(int password)
+        public void EnterPassword(string password)
         {
-            ScenarioContext.Current.Pending();
+            LP.EnterIntoPassword(password);
         }
 
         [Given(@"I click Login button")]
-        public void GivenIClickLoginButton()
+        public void ClickLoginButton()
         {
-            ScenarioContext.Current.Pending();
+            HP = LP.ClickLoginBTN();
         }
 
         [When(@"I click New Article button")]
-        public void WhenIClickNewArticleButton()
+        public void ClickNewArticleButton()
         {
-            ScenarioContext.Current.Pending();
+            AddP = HP.ClickNewArticleBTN();
         }
 
         [When(@"I enter title: (.*)")]
-        public void WhenIEnterTitleUsingBranchesIntoTitleTextbox(string title)
+        public void EnterTitle(string title)
         {
-            ScenarioContext.Current.Pending();
+            AddP.EnterTitleIntoTitleTBX(title);
         }
 
         [When(@"I enter content: (.*)")]
         public void WhenIEnterContentThisTutorialIsAComprehensiveIntroductionToGitBranches_IntoContentTextbox(string content)
         {
-            ScenarioContext.Current.Pending();
+            AddP.EnterContentIntoContentTBX(content);
         }
 
         [When(@"I select value: (.*) of Category list")]

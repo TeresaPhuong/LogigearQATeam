@@ -101,6 +101,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Common\CommonAC.cs" />
+    <Compile Include="Common\Config.cs" />
+    <Compile Include="PageObject\AddOrEditArticle\AddNewArticlePage.cs" />
+    <Compile Include="PageObject\HomePage\HomePageAC.cs" />
+    <Compile Include="PageObject\Login\LoginAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestSuites\ArticleFeature\ArticleFeature.feature.cs">
       <AutoGen>True</AutoGen>
@@ -115,6 +120,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="PageObject\Login\LoginIN.json" />
     <None Include="runtests.cmd" />
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
@@ -127,10 +133,7 @@
       <LastGenOutput>ArticleFeature.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="PageObject\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
