@@ -6,6 +6,7 @@ using TechTalk.SpecFlow;
 using LogigearQATeam.PageObject;
 using LogigearQATeam.PageObject.Login;
 using LogigearQATeam.PageObject.AddOrEditArticle;
+using LogigearQATeam.PageObject.ArticleManagerPage;
 
 namespace LogigearQATeam.TestSuites.ArticleFeature
 {
@@ -14,7 +15,8 @@ namespace LogigearQATeam.TestSuites.ArticleFeature
     {
         LoginAC LP = new LoginAC();
         HomePageAC HP = new HomePageAC();
-        AddNewArticlePage AddP = new AddNewArticlePage();
+        AddNewArticlePage ANP = new AddNewArticlePage();
+        ArticleManagerPageAC AMP = new ArticleManagerPageAC();
 
         [Given(@"I naviate to Joomla site: (.*)")]
         public void NaviateToJoomlaSite(string URL)
@@ -43,35 +45,35 @@ namespace LogigearQATeam.TestSuites.ArticleFeature
         [When(@"I click New Article button")]
         public void ClickNewArticleButton()
         {
-            AddP = HP.ClickNewArticleBTN();
+            ANP = HP.ClickNewArticleBTN();
         }
 
         [When(@"I enter title: (.*)")]
         public void EnterTitle(string title)
         {
-            AddP.EnterTitleIntoTitleTBX(title);
+            ANP.EnterTitleIntoTitleTBX(title);
         }
 
         [When(@"I enter content: (.*)")]
         public void EnterContent(string content)
         {
-            AddP.EnterContentIntoContentTBX(content);
+            ANP.EnterContentIntoContentTBX(content);
         }
 
         [When(@"I select value: (.*) of Category list")]
         public void SelectCategory(string category)
         {
-            ScenarioContext.Current.Pending();
+            ANP.SelectCategory(category);
         }
 
         [When(@"I click Save and Close button")]
         public void ClickSaveAndCloseButton()
         {
-            ScenarioContext.Current.Pending();
+            AMP = ANP.ClickSaveCloceButton();
         }
 
         [Then(@"The successful message displays")]
-        public void ThenTheSuccessfulMessageDisplays()
+        public void SuccessfulMessageDisplays()
         {
             ScenarioContext.Current.Pending();
         }

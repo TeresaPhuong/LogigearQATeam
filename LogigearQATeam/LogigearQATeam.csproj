@@ -104,6 +104,7 @@
     <Compile Include="Common\CommonAC.cs" />
     <Compile Include="Common\Config.cs" />
     <Compile Include="PageObject\AddOrEditArticle\AddNewArticlePage.cs" />
+    <Compile Include="PageObject\ArticleManagerPage\ArticleManagerPageAC.cs" />
     <Compile Include="PageObject\HomePage\HomePageAC.cs" />
     <Compile Include="PageObject\Login\LoginAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

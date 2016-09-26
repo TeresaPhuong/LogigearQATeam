@@ -56,10 +56,16 @@ namespace LogigearQATeam.Common
             driver.SwitchTo().DefaultContent();
         }
 
-        //public void ReadJsonFile()
-        //{
-        //    string json = File.ReadAllText(@"C: \Users\phuong.thi.tran\documents\visual studio 2015\Projects\LogigearQATeam\LogigearQATeam\PageObject\Login\LoginIN.json");
-            
-        //}
+        public bool IsSuccessMessageDisplay(string messagexpath, string messagecontent)
+        {
+            if (FindElement(messagexpath).Displayed == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
