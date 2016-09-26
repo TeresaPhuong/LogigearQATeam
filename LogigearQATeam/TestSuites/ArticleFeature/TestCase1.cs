@@ -53,19 +53,19 @@ namespace LogigearQATeam.TestSuites.ArticleFeature
         }
 
         [When(@"I enter content: (.*)")]
-        public void WhenIEnterContentThisTutorialIsAComprehensiveIntroductionToGitBranches_IntoContentTextbox(string content)
+        public void EnterContent(string content)
         {
             AddP.EnterContentIntoContentTBX(content);
         }
 
         [When(@"I select value: (.*) of Category list")]
-        public void WhenISelectValueImagesOfCategoryList(string category)
+        public void SelectCategory(string category)
         {
             ScenarioContext.Current.Pending();
         }
 
         [When(@"I click Save and Close button")]
-        public void WhenIClickSaveAndCloseButton()
+        public void ClickSaveAndCloseButton()
         {
             ScenarioContext.Current.Pending();
         }
