@@ -56,7 +56,7 @@ namespace LogigearQATeam.Common
             driver.SwitchTo().DefaultContent();
         }
 
-        public bool IsSuccessMessageDisplay(string messagexpath, string messagecontent)
+        public bool IsMessageDisplay(string messagexpath, string messagecontent)
         {
             if (FindElement(messagexpath).Displayed == true)
             {
