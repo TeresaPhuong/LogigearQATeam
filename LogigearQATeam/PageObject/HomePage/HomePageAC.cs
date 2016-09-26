@@ -15,6 +15,7 @@ namespace LogigearQATeam.PageObject
         #region Method
         public AddNewArticlePage ClickNewArticleBTN()
         {
+            WaitToPageLoad(NewArticle_BTN);
             ClickElement(NewArticle_BTN);
             return new AddNewArticlePage();
         }

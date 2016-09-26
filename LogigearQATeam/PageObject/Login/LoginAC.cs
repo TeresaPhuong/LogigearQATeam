@@ -17,6 +17,7 @@ namespace LogigearQATeam.PageObject.Login
         #region Method
         public void EnterIntoUsername(string username)
         {
+            WaitToPageLoad(Username_TBX);
             EnterText(Username_TBX, username);
         }
 

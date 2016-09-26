@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 using System.IO;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using Newtonsoft.Json;
+using TechTalk.SpecFlow;
+using OpenQA.Selenium.Chrome;
 
 namespace LogigearQATeam.Common
 {
@@ -56,9 +57,9 @@ namespace LogigearQATeam.Common
             driver.SwitchTo().DefaultContent();
         }
 
-        public bool IsMessageDisplay(string messagexpath, string messagecontent)
+        public bool IsCorrectMessageDisplay(string messagexpath, string messagecontent)
         {
-            if (FindElement(messagexpath).Displayed == true)
+            if (FindElement(messagexpath).Text == messagecontent)
             {
                 return true;
             }
@@ -67,5 +68,5 @@ namespace LogigearQATeam.Common
                 return false;
             }
         }
-    }
+        }
 }

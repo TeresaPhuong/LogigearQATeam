@@ -72,16 +72,16 @@ namespace LogigearQATeam.TestSuites.ArticleFeature
             AMP = ANP.ClickSaveCloceButton();
         }
 
-        [Then(@"The successful message displays")]
-        public void SuccessfulMessageDisplays()
+        [Then(@"The successful message: (.*) displays")]
+        public void SuccessfulMessageDisplays(string messagecontent)
         {
-            ScenarioContext.Current.Pending();
+            AMP.IsSuccessMessageDisplay(messagecontent);
         }
 
-        [Then(@"The new article displays in Article Manage table")]
-        public void ThenTheNewArticleDisplaysInArticleManageTable()
+        [Then(@"The new article (.*) displays in Article Manage table")]
+        public bool ThenTheNewArticleDisplaysInArticleManageTable(string checkedtitle)
         {
-            ScenarioContext.Current.Pending();
+            return AMP.IsNewArticleDisplay(checkedtitle);
         }
 
     }
