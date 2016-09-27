@@ -16,6 +16,9 @@ namespace LogigearQATeam.PageObject.ArticleManagerPage
         private string Search_BTN = ".//*[@id='j-main-container']//div[input[@id='filter_search']]/button";
         private string CheckBox = ".//*[@id='articleList']//th[@class='center']/input";
         private string Trash_BTN = ".//*[@id='toolbar-trash']/button";
+        private string SearchTools_BTN = ".//button[@class='btn hasTooltip js-stools-btn-filter btn-primary']";
+        private string SearchStatus_BTN = ".//*[@id='filter_published_chzn']/a";
+        private string Status_BTN = ".//*[@id='filter_published_chzn']/div/ul/li[contains(text(),'{0}')]";
         #endregion
         #region Method
         public bool IsSuccessMessageDisplay(string messagecontent)
@@ -42,10 +45,27 @@ namespace LogigearQATeam.PageObject.ArticleManagerPage
             EnterText(Search_TBX,articletitle);
             ClickElement(Search_BTN);
         }
+
+        public void SearchWithStatus(string status)
+        {
+            ClickElement(SearchTools_BTN);
+            string statusvalue = string.Format(Status_BTN, status);
+            ClickElement(statusvalue);
+        }
+        public void SelectArticle(string titletosearch)
+        {
+            SearchArticleTitle(titletosearch);
+            ClickElement(CheckBox);
+        }
+        public void TrashedArticle(string titletotrash)
+        {
+            SearchArticleTitle(titletotrash);
+            FindElement(CheckBox);
+            ClickElement(Trash_BTN);
+        }
         public void DeleteArticleWithTitle(string articletitle)
         {
-            SearchArticleTitle(articletitle);
-            FindElement(CheckBox).Click();
+            SelectArticle(articletitle);
             ClickElement(Trash_BTN);
         }
         #endregion
