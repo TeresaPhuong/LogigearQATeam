@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using LogigearQATeam.PageObject;
 using LogigearQATeam.PageObject.Login;
@@ -75,13 +76,14 @@ namespace LogigearQATeam.TestSuites.ArticleFeature
         [Then(@"The successful message: (.*) displays")]
         public void SuccessfulMessageDisplays(string messagecontent)
         {
-            AMP.IsSuccessMessageDisplay(messagecontent);
+            Console.WriteLine(messagecontent);
+            Assert.IsTrue(AMP.IsSuccessMessageDisplay(messagecontent));
         }
 
         [Then(@"The new article: (.*) displays in Article Manage table")]
-        public bool ThenTheNewArticleDisplaysInArticleManageTable(string checkedtitle)
+        public void NewArticleDisplays(string checkedtitle)
         {
-            return AMP.IsNewArticleDisplay(checkedtitle);
+            Assert.IsTrue(AMP.IsNewArticleDisplay(checkedtitle));
         }
 
     }

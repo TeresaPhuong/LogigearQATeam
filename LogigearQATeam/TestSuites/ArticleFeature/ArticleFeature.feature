@@ -1,4 +1,4 @@
-﻿Feature: ArticleFeature
+﻿Feature: Article Feature
 	
 Scenario: User can add new article
 	Given I naviate to Joomla site: http://192.168.189.119/abyssal/administrator/

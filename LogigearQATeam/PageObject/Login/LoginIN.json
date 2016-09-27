@@ -1,3 +1,5 @@
 ﻿{
-  "Username_TBX": ".//input[@id='mod-login-username']"
+  "Username_TBX": ".//input[@id='mod-login-username']",
+  "Password_TBX": ".//input[@id='mod-login-password']",
+  "Login_BTN": ".//div[@class='btn-group']/button"
 }

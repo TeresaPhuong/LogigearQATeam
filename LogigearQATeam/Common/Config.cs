@@ -44,16 +44,6 @@ namespace LogigearQATeam.Common
         //    }
         //    driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
         //}
-        [Before]
-        public void Precondition()
-        {
-            driver = new ChromeDriver();
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-        }
-        [After]
-        public void Postcondition()
-        {
-            driver.Quit();
-        }
+        
     }
 }

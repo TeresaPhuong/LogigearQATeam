@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace LogigearQATeam.PageObject.Login
 {
@@ -13,8 +14,15 @@ namespace LogigearQATeam.PageObject.Login
         private string Username_TBX = ".//input[@id='mod-login-username']";
         private string Password_TBX = ".//input[@id='mod-login-password']";
         private string Login_BTN = ".//div[@class='btn-group']/button";
-        #endregion
+        //private string Username_TBX { get; set; }
+        #endregion 
         #region Method
+
+        //public string ReadLoginINFile()
+        //{
+        //    var JsonLoginIN = File.ReadAllText("LoginIN.json");
+        //    var objects = JsonArrayAttribute.GetCustomAttributes(JsonLoginIN);
+        //}
         public void EnterIntoUsername(string username)
         {
             WaitToPageLoad(Username_TBX);

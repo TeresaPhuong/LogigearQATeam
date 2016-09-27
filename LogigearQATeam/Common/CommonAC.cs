@@ -33,8 +33,9 @@ namespace LogigearQATeam.Common
 
         public void SelectDropdownList(string element, string selectvalue)
         {
-            string value = "*" + selectvalue;
-            new SelectElement(FindElement(element)).SelectByText(value);
+            FindElement(element).Click();
+            //new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementIsVisible(By.XPath(selectvalue)));
+            FindElement(selectvalue).Click();
         }
 
         public void WaitToPageLoad(string ElementToCheck)
@@ -51,7 +52,7 @@ namespace LogigearQATeam.Common
         {
             driver.SwitchTo().Frame(FrameID);
         }
-        
+
         public void OutOfFrame()
         {
             driver.SwitchTo().DefaultContent();
@@ -59,6 +60,7 @@ namespace LogigearQATeam.Common
 
         public bool IsCorrectMessageDisplay(string messagexpath, string messagecontent)
         {
+            Console.WriteLine(FindElement(messagexpath).Text);
             if (FindElement(messagexpath).Text == messagecontent)
             {
                 return true;
@@ -68,5 +70,18 @@ namespace LogigearQATeam.Common
                 return false;
             }
         }
+        [Before]
+        public void SetUp()
+        {
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
         }
+        [After]
+        public void Postcondition()
+        {
+            driver.Quit();
+        }
+    }
+    
 }
