@@ -11,7 +11,7 @@ using OpenQA.Selenium;
 
 namespace LogigearQATeam.Common
 {
-    class Config:CommonAC
+    class Browser:CommonAC
     {
         //public void OpenChrome()
         //{

@@ -7,7 +7,7 @@ using LogigearQATeam.PageObject.ArticleManagerPage;
 
 namespace LogigearQATeam.PageObject.AddOrEditArticle
 {
-    class AddNewArticlePage:Common.CommonAC
+    class AddNewArticlePageAC:Common.CommonAC
     {
         #region Interface
         private string Title_TBX = ".//input[@id='jform_title']";

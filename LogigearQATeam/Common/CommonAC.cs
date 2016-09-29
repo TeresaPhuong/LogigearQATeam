@@ -70,18 +70,6 @@ namespace LogigearQATeam.Common
                 return false;
             }
         }
-        [Before]
-        public void SetUp()
-        {
-            driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-        }
-        [After]
-        public void Postcondition()
-        {
-            driver.Quit();
-        }
+        
     }
-    
 }

@@ -5,7 +5,8 @@ Scenario: User can add new article
 	And I enter username: phuong.thi.tran
 	And I enter password: 123456
 	And I click Login button
-	When I click New Article button
+	When I navigate to Article Manager page
+	And I click New button
 	And I enter title: Using Branches into title textbox
 	And I enter content: This tutorial is a comprehensive introduction to Git branches. into content textbox
 	And I select value: Images of Category list

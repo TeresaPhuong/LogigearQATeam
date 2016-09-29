@@ -4,20 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogigearQATeam.PageObject.AddOrEditArticle;
+using LogigearQATeam.PageObject.ArticleManagerPage;
 
 namespace LogigearQATeam.PageObject
 {
     class HomePageAC:Common.CommonAC
     {
         #region Interface
-        private string NewArticle_BTN = ".//span[contains(text(),'New Article')]/..";
+        private string NewArticle_BTN = ".//*[@id='content']//a[span[contains(text(),'New Article')]]";
+        private string Articles_BTN = ".//*[@id='content']//a[span[contains(text(),'Articles')]]";
         #endregion
         #region Method
-        public AddNewArticlePage ClickNewArticleBTN()
+        public AddNewArticlePageAC ClickNewArticleBTN()
         {
             WaitToPageLoad(NewArticle_BTN);
             ClickElement(NewArticle_BTN);
-            return new AddNewArticlePage();
+            return new AddNewArticlePageAC();
+        }
+
+        public ArticleManagerPageAC ClickArticlesButton()
+        {
+            ClickElement(Articles_BTN);
+            return new ArticleManagerPageAC();
         }
         #endregion
     }

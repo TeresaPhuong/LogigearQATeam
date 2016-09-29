@@ -102,18 +102,24 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Common\CommonAC.cs" />
-    <Compile Include="Common\Config.cs" />
-    <Compile Include="PageObject\AddOrEditArticle\AddNewArticlePage.cs" />
+    <Compile Include="Common\Browser.cs" />
+    <Compile Include="PageObject\AddOrEditArticle\AddNewArticlePageAC.cs" />
     <Compile Include="PageObject\ArticleManagerPage\ArticleManagerPageAC.cs" />
     <Compile Include="PageObject\HomePage\HomePageAC.cs" />
     <Compile Include="PageObject\Login\LoginAC.cs" />
+    <Compile Include="PageObject\Master\Master.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestSuites\ArticleFeature\ArticleFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ArticleFeature.feature</DependentUpon>
     </Compile>
-    <Compile Include="TestSuites\ArticleFeature\TestCase1.cs" />
+    <Compile Include="TestSuites\TestCase\AddNewArticlePageTC.cs" />
+    <Compile Include="TestSuites\TestCase\ArticleManagerPageTC.cs" />
+    <Compile Include="TestSuites\TestCase\CommonTC.cs" />
+    <Compile Include="TestSuites\TestCase\HomePageTC.cs" />
+    <Compile Include="TestSuites\TestCase\LoginPageTC.cs" />
+    <Compile Include="TestSuites\TestCase\SetupTC.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
